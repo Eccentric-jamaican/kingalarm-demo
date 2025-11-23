@@ -63,22 +63,32 @@ export default function Benefits() {
                         <BenefitCard
                             heading="Free panic alarm systems"
                             description="KingAlarm pioneered free panic alarm systems in Jamaica, making emergency protection accessible to thousands of families."
+                            imageSrc="/benefits-section/benefit-panic-alarm.png"
+                            imageAlt="Modern panic alarm button"
                         />
                         <BenefitCard
                             heading="Rapid emergency response"
                             description="High-speed radio transmission alerts KingAlarm's 24/7 Central Monitoring Centre in milliseconds, dispatching highly trained Armed Response Teams to your premises."
+                            imageSrc="/benefits-section/benefit-emergency-response.jpg"
+                            imageAlt="Security response vehicle at night"
                         />
                         <BenefitCard
                             heading="Strategic coverage"
                             description="Wireless panic buttons can be placed strategically throughout your home and paired with a hardwired medical alert button for full coverage."
+                            imageSrc="/benefits-section/benefit-strategic-coverage.png"
+                            imageAlt="Modern home interior with security sensor"
                         />
                         <BenefitCard
                             heading="Comprehensive home benefits"
                             description="Monitored customers also receive Roadside Assistance, Ambulance Response, Escort Services, and Party Patrol Services at no additional charge."
+                            imageSrc="/benefits-section/benefit-home-benefits.png"
+                            imageAlt="Collage of home benefits services"
                         />
                         <BenefitCard
                             heading="No-obligation security survey"
                             description="Request a free security survey and get tailored advice from KingAlarm's experienced sales team on protecting your home and family."
+                            imageSrc="/benefits-section/benefit-security-survey.png"
+                            imageAlt="Security consultant talking to homeowner"
                         />
                     </div>
                 </div>

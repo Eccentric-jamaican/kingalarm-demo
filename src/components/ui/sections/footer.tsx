@@ -38,11 +38,11 @@ export default function Footer() {
                     <div>
                         <h4 className="mb-4 font-bold">Company</h4>
                         <ul className="space-y-3 text-gray-400">
-                            <li><Link href="#" className="hover:text-white transition-colors">About us</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Services</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Blog</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Contact</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">About us</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Services</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Blog</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Contact</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Careers</Link></li>
                         </ul>
                     </div>
 
@@ -50,11 +50,11 @@ export default function Footer() {
                     <div>
                         <h4 className="mb-4 font-bold">Services</h4>
                         <ul className="space-y-3 text-gray-400">
-                            <li><Link href="#" className="hover:text-white transition-colors">About us</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Our approach</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Blog</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Contact</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">About us</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Our approach</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Blog</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Contact</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Careers</Link></li>
                         </ul>
                     </div>
 
@@ -62,11 +62,11 @@ export default function Footer() {
                     <div>
                         <h4 className="mb-4 font-bold">Solutions</h4>
                         <ul className="space-y-3 text-gray-400">
-                            <li><Link href="#" className="hover:text-white transition-colors">Monitoring hub</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Response team</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Risk evaluation</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">System design</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Guard services</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Monitoring hub</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Response team</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Risk evaluation</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">System design</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Guard services</Link></li>
                         </ul>
                     </div>
 
@@ -74,11 +74,11 @@ export default function Footer() {
                     <div>
                         <h4 className="mb-4 font-bold">Resources</h4>
                         <ul className="space-y-3 text-gray-400">
-                            <li><Link href="#" className="hover:text-white transition-colors">Service detail</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Security audits</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Technology</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">FAQ</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Support</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Service detail</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Security audits</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Technology</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">FAQ</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Support</Link></li>
                         </ul>
                     </div>
 
@@ -86,11 +86,11 @@ export default function Footer() {
                     <div>
                         <h4 className="mb-4 font-bold">Legal</h4>
                         <ul className="space-y-3 text-gray-400">
-                            <li><Link href="#" className="hover:text-white transition-colors">Privacy policy</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Terms of service</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Security standards</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Data protection</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Compliance info</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Privacy policy</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Terms of service</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Security standards</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Data protection</Link></li>
+                            <li><Link href="#" className="hover:text-primary transition-colors">Compliance info</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -110,9 +110,9 @@ export default function Footer() {
                 <div className="border-t border-neutral-800 pt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div className="flex flex-wrap gap-4 text-sm text-gray-400">
                         <span>© 2025 KingAlarm. All rights reserved.</span>
-                        <Link href="#" className="hover:text-white transition-colors">Privacy policy</Link>
-                        <Link href="#" className="hover:text-white transition-colors">Terms of service</Link>
-                        <Link href="#" className="hover:text-white transition-colors">Cookies settings</Link>
+                        <Link href="#" className="hover:text-primary transition-colors">Privacy policy</Link>
+                        <Link href="#" className="hover:text-primary transition-colors">Terms of service</Link>
+                        <Link href="#" className="hover:text-primary transition-colors">Cookies settings</Link>
                     </div>
 
                     {/* Social Icons */}
@@ -121,7 +121,7 @@ export default function Footer() {
                             href="https://www.facebook.com/KingAlarmJA/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-white transition-colors"
+                            className="text-gray-400 hover:text-primary transition-colors"
                         >
                             <Facebook className="h-5 w-5" />
                         </Link>
@@ -129,7 +129,7 @@ export default function Footer() {
                             href="https://www.instagram.com/kingalarmja/?hl=en"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-white transition-colors"
+                            className="text-gray-400 hover:text-primary transition-colors"
                         >
                             <Instagram className="h-5 w-5" />
                         </Link>
@@ -137,7 +137,7 @@ export default function Footer() {
                             href="https://wa.me/kingalarm"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-white transition-colors"
+                            className="text-gray-400 hover:text-primary transition-colors"
                         >
                             <X className="h-5 w-5" />
                         </Link>
@@ -145,7 +145,7 @@ export default function Footer() {
                             href="https://jm.linkedin.com/company/kingalarmja"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-white transition-colors"
+                            className="text-gray-400 hover:text-primary transition-colors"
                         >
                             <Linkedin className="h-5 w-5" />
                         </Link>

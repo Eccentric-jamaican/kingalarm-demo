@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -34,14 +35,16 @@ export default function CTA() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div ref={contentRef} className="mx-auto max-w-3xl text-center">
                     <h2 className="mb-6 text-4xl font-bold tracking-tight md:text-5xl">
-                        Need more information?
+                        What do you want to protect?
                     </h2>
                     <p className="mb-8 text-lg text-gray-400 md:text-xl">
                         Our experts are ready to discuss your specific security requirements
                     </p>
-                    <Button className="px-8 py-6 text-lg font-bold">
-                        Contact
-                    </Button>
+                    <Link href="/contact">
+                        <Button className="px-8 py-6 text-lg font-bold">
+                            Contact
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </section>

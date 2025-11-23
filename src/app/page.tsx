@@ -8,6 +8,7 @@ import Benefits from "@/components/ui/sections/Benefits";
 import Services from "@/components/ui/sections/Services";
 import FAQ from "@/components/ui/sections/FAQ";
 import CTA from "@/components/ui/sections/CTA";
+import BlogShowcase from "@/components/ui/sections/blog-showcase";
 import Footer from "@/components/ui/sections/footer";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <Stats />
       <Benefits />
       <Services />
+      <BlogShowcase />
       <FAQ />
       <CTA />
       <Footer />

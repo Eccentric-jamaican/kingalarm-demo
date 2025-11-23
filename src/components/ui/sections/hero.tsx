@@ -39,7 +39,7 @@ export default function Hero() {
     }, { scope: heroRef });
 
     return (
-        <section ref={heroRef} className="relative h-[90vh] w-full overflow-hidden bg-black">
+        <section ref={heroRef} className="relative h-[90vh] w-full max-w-[100vw] overflow-hidden bg-black">
             {/* 3D Grid Background Effect - Right Side */}
             <div className="absolute right-0 top-0 h-full w-full md:w-[60%] overflow-hidden perspective-[1000px]">
                 <div
