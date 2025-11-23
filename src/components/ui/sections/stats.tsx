@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -19,31 +18,42 @@ export default function Stats() {
     useGSAP(() => {
         if (!sectionRef.current || !contentRef.current) return;
 
-        // Animate mask size for zoom effect
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top top",
-                end: "+=150%", // Pin for 1.5 screen heights
-                scrub: 1,
-                pin: true,
-                anticipatePin: 1,
-            }
-        });
+        const mm = gsap.matchMedia();
 
-        // Start with small mask and zoom out to reveal
-        tl.fromTo(sectionRef.current, 
-            { 
-                maskSize: "20%",
-                WebkitMaskSize: "20%",
-            },
-            { 
-                maskSize: "4000%", // Expand enough to cover screen
-                WebkitMaskSize: "4000%",
-                duration: 1,
-                ease: "power2.inOut"
-            }
-        );
+        mm.add({
+            isMobile: "(max-width: 767px)",
+            isDesktop: "(min-width: 768px)",
+        }, (context) => {
+            const { isMobile } = context.conditions as { isMobile: boolean };
+            const initialSize = isMobile ? "60%" : "20%";
+            const finalSize = isMobile ? "6000%" : "4000%";
+
+            // Animate mask size for zoom effect
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top top",
+                    end: "+=150%", // Pin for 1.5 screen heights
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                }
+            });
+
+            // Start with small mask and zoom out to reveal
+            tl.fromTo(sectionRef.current,
+                {
+                    maskSize: initialSize,
+                    WebkitMaskSize: initialSize,
+                },
+                {
+                    maskSize: finalSize, // Expand enough to cover screen
+                    WebkitMaskSize: finalSize,
+                    duration: 1,
+                    ease: "power2.inOut"
+                }
+            );
+        });
 
         // Content animations triggered after mask opens
         if (leftColRef.current && statsGridRef.current) {
@@ -76,8 +86,8 @@ export default function Stats() {
     }, { scope: sectionRef });
 
     return (
-        <div 
-            ref={sectionRef} 
+        <div
+            ref={sectionRef}
             className="relative w-full h-screen bg-black flex items-center justify-center overflow-hidden"
             style={{
                 maskImage: "url('/logo-light.svg')",
@@ -86,7 +96,7 @@ export default function Stats() {
                 WebkitMaskRepeat: "no-repeat",
                 maskPosition: "center",
                 WebkitMaskPosition: "center",
-                maskSize: "20%", // Initial size
+                maskSize: "20%", // Initial size (will be overridden by GSAP)
                 WebkitMaskSize: "20%",
             }}
         >
@@ -94,47 +104,40 @@ export default function Stats() {
                 <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
                     {/* Left Column - Text Content */}
                     <div ref={leftColRef} className="flex flex-col justify-center space-y-6">
-                        <span className="text-sm font-medium text-gray-400">Tagline</span>
-                        <h2 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl text-primary">
-                            Medium length section heading goes here
+                        <span className="text-sm font-medium text-white">Our Impact</span>
+                        <h2 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl text-white">
+                            Leading security across the Caribbean
                         </h2>
-                        <p className="text-base text-gray-400">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                            varius enim in eros elementum tristique. Duis cursus, mi quis
-                            viverra ornare, eros dolor interdum nulla, ut commodo diam libero
-                            vitae erat.
+                        <p className="text-lg text-white">
+                            As Jamaica's largest electronic security company, we've built trust through innovation, reliability, and unwavering commitment to protecting what matters most.
                         </p>
-                        <div className="flex gap-4">
-                            <Button variant="outline" className="border-white/20 bg-transparent text-white hover:bg-white/10">
-                                Button
-                            </Button>
-                            <Button variant="ghost" className="group text-white hover:bg-transparent hover:text-gray-300">
-                                Button <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                            </Button>
-                        </div>
                     </div>
 
                     {/* Right Column - Stats Grid */}
                     <div ref={statsGridRef} className="grid gap-4 sm:grid-cols-2">
                         <StatCard
-                            heading="Short heading goes here"
-                            value={50}
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                            heading="Years of experience"
+                            value={25}
+                            description="Protecting Jamaica and the Caribbean since 2000"
+                            suffix=""
                         />
                         <StatCard
-                            heading="Short heading goes here"
-                            value={75}
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                            heading="Locations protected"
+                            value={12000}
+                            description="Providing security services across the region"
+                            suffix="+"
                         />
                         <StatCard
-                            heading="Short heading goes here"
-                            value={90}
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                            heading="24/7 monitoring"
+                            value={11000}
+                            description="Locations with round-the-clock armed response"
+                            suffix="+"
                         />
                         <StatCard
-                            heading="Short heading goes here"
-                            value={100}
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                            heading="Security professionals"
+                            value={3000}
+                            description="Dedicated officers committed to your safety"
+                            suffix="+"
                         />
                     </div>
                 </div>
@@ -147,18 +150,20 @@ function StatCard({
     heading,
     value,
     description,
+    suffix = "%",
 }: {
     heading: string;
     value: number;
     description: string;
+    suffix?: string;
 }) {
     const numberRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
         if (!numberRef.current) return;
 
-        gsap.fromTo(numberRef.current, 
-            { innerText: 0 }, 
+        gsap.fromTo(numberRef.current,
+            { innerText: 0 },
             {
                 innerText: value,
                 duration: 2,
@@ -169,9 +174,11 @@ function StatCard({
                     start: "top 85%",
                     toggleActions: "play none none reverse"
                 },
-                onUpdate: function() {
+                onUpdate: function () {
                     if (numberRef.current) {
-                        numberRef.current.innerText = Math.ceil(this.targets()[0].innerText) + "%";
+                        const currentValue = Math.ceil(this.targets()[0].innerText);
+                        const formattedValue = currentValue.toLocaleString();
+                        numberRef.current.innerText = formattedValue + suffix;
                     }
                 }
             }
@@ -179,13 +186,13 @@ function StatCard({
     }, { scope: numberRef });
 
     return (
-        <div className="flex flex-col justify-between rounded-xl border border-white/10 bg-white/5 p-6 transition-colors hover:bg-white/10 stat-card">
-            <h3 className="mb-4 text-xl font-bold md:text-2xl text-primary">{heading}</h3>
+        <div className="flex flex-col justify-between p-6 stat-card">
+            <h3 className="mb-4 text-xl font-bold md:text-2xl text-white">{heading}</h3>
             <div>
-                <div ref={numberRef} className="mb-3 text-4xl font-bold tracking-tighter md:text-5xl text-primary">
-                    0%
+                <div ref={numberRef} className="mb-3 text-4xl font-bold tracking-tighter md:text-5xl text-white">
+                    0{suffix}
                 </div>
-                <p className="text-sm text-gray-400">{description}</p>
+                <p className="text-sm text-white">{description}</p>
             </div>
         </div>
     );

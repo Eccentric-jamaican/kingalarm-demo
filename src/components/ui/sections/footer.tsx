@@ -33,7 +33,7 @@ export default function Footer() {
                 </p>
 
                 {/* Main Footer Links */}
-                <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 mb-16">
+                <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                     {/* Company */}
                     <div>
                         <h4 className="mb-4 font-bold">Company</h4>
@@ -93,6 +93,17 @@ export default function Footer() {
                             <li><Link href="#" className="hover:text-white transition-colors">Compliance info</Link></li>
                         </ul>
                     </div>
+                </div>
+
+                {/* Logo */}
+                <div className="flex justify-center mb-16">
+                    <Image
+                        src="/logo-dark.svg"
+                        alt="KingAlarm"
+                        width={500}
+                        height={158}
+                        className="w-full max-w-2xl h-auto"
+                    />
                 </div>
 
                 {/* Bottom Section */}

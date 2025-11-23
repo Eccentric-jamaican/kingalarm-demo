@@ -7,57 +7,57 @@ import { cn } from "@/lib/utils";
 
 const services = [
     {
-        id: "monitoring",
-        tabLabel: "Monitoring hub",
-        label: "Surveillance",
-        title: "24/7 Eyes on your assets",
+        id: "electronic",
+        tabLabel: "Electronic Systems",
+        label: "Protection",
+        title: "Comprehensive electronic protection",
         description:
-            "Our state-of-the-art monitoring center never blinks. We use advanced AI analytics to detect anomalies before they become threats.",
+            "Integration of Intrusion Detection, Fire/Smoke safety, CCTV surveillance, and Access Control systems for complete facility management.",
     },
     {
         id: "response",
-        tabLabel: "Response team",
-        label: "Action",
-        title: "Rapid deployment force",
+        tabLabel: "Armed Response",
+        label: "Security",
+        title: "Rapid response and mobile protection",
         description:
-            "When an alarm triggers, our tactical response teams are dispatched immediately, ensuring that help arrives when it matters most.",
+            "Beyond alarm response, we offer Roadside Assistance, Escort Services, and Party Patrols to ensure safety wherever you are.",
     },
     {
-        id: "risk",
-        tabLabel: "Risk evaluation",
-        label: "Analysis",
-        title: "Proactive threat assessment",
+        id: "monitoring",
+        tabLabel: "Monitoring",
+        label: "Vigilance",
+        title: "24/7 Central Station vigilance",
         description:
-            "We don't just react; we predict. Our experts analyze your environment to identify vulnerabilities and fortify your defenses.",
+            "State-of-the-art monitoring for burglary, fire, and medical emergencies, coordinated with immediate ambulance and police dispatch.",
     },
     {
-        id: "system",
-        tabLabel: "System design",
-        label: "Engineering",
-        title: "Custom security architecture",
+        id: "cit",
+        tabLabel: "Cash Services",
+        label: "Logistics",
+        title: "Secure armed courier logistics",
         description:
-            "Every facility is unique. We design bespoke security systems that integrate seamlessly with your operations and infrastructure.",
+            "Professional Cash-in-Transit services for safe bank deposits and payroll management, reducing operational risk.",
     },
     {
-        id: "guard",
-        tabLabel: "Guard services",
-        label: "Guard",
-        title: "Comprehensive protection for critical environments",
+        id: "tracking",
+        tabLabel: "Tracking",
+        label: "Technology",
+        title: "Real-time asset and personal tracking",
         description:
-            "We transform potential vulnerabilities into fortified security landscapes. Our approach integrates human expertise with technological precision.",
+            "Advanced GPS solutions for vehicle fleet management and personal safety monitoring to keep you connected and secure.",
     },
     {
-        id: "threat",
-        tabLabel: "Threat analysis",
+        id: "specialized",
+        tabLabel: "Specialized",
         label: "Intelligence",
-        title: "Data-driven security insights",
+        title: "Expert investigations and consulting",
         description:
-            "Leveraging global threat intelligence to keep your security measures ahead of emerging risks and evolving criminal tactics.",
+            "Professional risk assessments, polygraph services, and investigative support to address complex security challenges.",
     },
 ];
 
 export default function Services() {
-    const [activeTab, setActiveTab] = useState(services[4].id); // Default to "Guard services" as in design
+    const [activeTab, setActiveTab] = useState(services[0].id);
 
     const activeService = services.find((s) => s.id === activeTab) || services[0];
 
@@ -67,19 +67,15 @@ export default function Services() {
                 {/* Section Header */}
                 <div className="mb-16 text-center">
                     <span className="mb-4 block text-sm font-medium text-gray-400">
-                        Shield
+                        Services
                     </span>
                     <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
-                        Security solutions that protect
+                        We offer a wide range of security solutions to protect your home and business
                     </h2>
-                    <p className="mx-auto max-w-2xl text-lg text-gray-400">
-                        Precision-engineered protection for every environment. Our services
-                        adapt to the unique challenges of modern security landscapes.
-                    </p>
                 </div>
 
                 {/* Interactive Card */}
-                <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+                <div className="overflow-hidden border border-white/10 bg-white/5">
                     {/* Tabs Navigation */}
                     <div className="flex overflow-x-auto border-b border-white/10 scrollbar-hide">
                         {services.map((service) => (
@@ -101,7 +97,7 @@ export default function Services() {
                     {/* Content Area */}
                     <div className="grid gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
                         {/* Image Placeholder */}
-                        <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-white/10 lg:aspect-auto lg:h-full">
+                        <div className="relative aspect-square w-full overflow-hidden bg-white/10 lg:aspect-auto lg:h-full">
                             <div className="absolute inset-0 flex items-center justify-center text-white/20">
                                 <ImageIcon className="h-24 w-24" />
                             </div>
@@ -119,16 +115,10 @@ export default function Services() {
                                 {activeService.description}
                             </p>
                             <div className="flex gap-4 pt-4">
-                                <Button
-                                    variant="outline"
-                                    className="rounded-full border-white/20 bg-transparent px-6 text-white hover:bg-white/10"
-                                >
+                                <Button className="px-6">
                                     Explore
                                 </Button>
-                                <Button
-                                    variant="ghost"
-                                    className="group px-0 text-white hover:bg-transparent hover:text-gray-300"
-                                >
+                                <Button className="group px-0">
                                     Details{" "}
                                     <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                 </Button>
