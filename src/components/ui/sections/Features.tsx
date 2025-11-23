@@ -44,6 +44,22 @@ export default function Features() {
             }
         });
 
+        // Animate glowing line
+        const line = rightColRef.current.querySelector('.glowing-line');
+        gsap.fromTo(line, 
+            { height: "0%" },
+            {
+                height: "100%",
+                ease: "none",
+                scrollTrigger: {
+                    trigger: rightColRef.current,
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true,
+                }
+            }
+        );
+
     }, { scope: sectionRef });
 
     return (
@@ -67,7 +83,9 @@ export default function Features() {
                     {/* Right Column - Feature List */}
                     <div ref={rightColRef} className="relative space-y-12">
                         {/* Vertical connecting line */}
-                        <div className="absolute left-[20px] top-4 bottom-4 w-px bg-white/20 md:left-[24px]" />
+                        <div className="absolute left-[20px] top-4 bottom-4 w-px bg-white/20 md:left-[24px]">
+                            <div className="glowing-line absolute top-0 left-0 w-full bg-blue-600 shadow-[0_0_10px_rgba(37,99,235,0.8)]" />
+                        </div>
 
                         <FeatureItem
                             icon={<ShieldAlert className="h-6 w-6 md:h-8 md:w-8" />}
