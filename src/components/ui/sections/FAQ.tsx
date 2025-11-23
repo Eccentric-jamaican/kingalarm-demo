@@ -66,7 +66,7 @@ export default function FAQ() {
     const rightFaqs = faqs.slice(midPoint);
 
     return (
-        <section className="bg-black py-24 text-white">
+        <section id="faq" className="bg-black py-24 text-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mb-16 text-center">
                     <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">

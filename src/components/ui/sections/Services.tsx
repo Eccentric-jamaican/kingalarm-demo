@@ -112,7 +112,7 @@ export default function Services() {
                             <span className="text-sm font-bold text-gray-400">
                                 {activeService.label}
                             </span>
-                            <h3 className="text-3xl font-bold leading-tight md:text-4xl">
+                            <h3 className="text-xl font-bold leading-tight md:text-2xl">
                                 {activeService.title}
                             </h3>
                             <p className="text-lg text-gray-400 leading-relaxed">

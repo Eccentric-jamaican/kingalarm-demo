@@ -12,7 +12,7 @@ export default function Benefits() {
                     <div className="relative">
                         <div className="sticky top-24 flex flex-col space-y-8">
                             <span className="text-sm font-medium text-gray-400">Tagline</span>
-                            <h2 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
+                            <h2 className="text-4xl font-bold leading-tight tracking-tight md:text-5xl">
                                 Medium length section heading goes here
                             </h2>
                             <p className="text-lg text-gray-400">
@@ -32,7 +32,7 @@ export default function Benefits() {
 
                             {/* Feature Four Block */}
                             <div className="pt-8">
-                                <h3 className="mb-2 text-xl font-bold">04 Feature four</h3>
+                                <h3 className="mb-2 text-xl font-bold md:text-2xl">04 Feature four</h3>
                                 <p className="text-gray-400">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                     Suspendisse varius enim in eros elementum tristique.

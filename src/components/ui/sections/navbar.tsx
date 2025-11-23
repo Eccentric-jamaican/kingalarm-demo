@@ -38,30 +38,27 @@ export default function Navbar() {
                     <NavigationMenu>
                         <NavigationMenuList className="gap-4">
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Platform</NavigationMenuTrigger>
+                                <Link href="/about" legacyBehavior passHref>
+                                    <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                                        About us
+                                    </NavigationMenuLink>
+                                </Link>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger>Products</NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                                        <li className="row-span-3">
-                                            <NavigationMenuLink asChild>
-                                                <a
-                                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                                    href="/"
-                                                >
-                                                    <div className="mb-2 mt-4 text-lg font-medium">KingAlarm Platform</div>
-                                                    <p className="text-sm leading-tight text-muted-foreground">
-                                                        Comprehensive security solutions for your home and business.
-                                                    </p>
-                                                </a>
-                                            </NavigationMenuLink>
-                                        </li>
-                                        <ListItem href="/docs" title="Introduction">
-                                            Re-usable components built using Radix UI and Tailwind CSS.
+                                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                                        <ListItem title="Alarm Systems" href="/products/alarms">
+                                            Advanced intrusion detection systems.
                                         </ListItem>
-                                        <ListItem href="/docs/installation" title="Installation">
-                                            How to install dependencies and structure your app.
+                                        <ListItem title="Video Surveillance" href="/products/cameras">
+                                            HD cameras with AI-powered analytics.
                                         </ListItem>
-                                        <ListItem href="/docs/primitives/typography" title="Typography">
-                                            Styles for headings, paragraphs, lists...etc
+                                        <ListItem title="Access Control" href="/products/access">
+                                            Smart locks and entry management.
+                                        </ListItem>
+                                        <ListItem title="Fire & Safety" href="/products/fire">
+                                            Comprehensive fire detection systems.
                                         </ListItem>
                                     </ul>
                                 </NavigationMenuContent>
@@ -74,42 +71,49 @@ export default function Navbar() {
                                             Protect your family with 24/7 monitoring.
                                         </ListItem>
                                         <ListItem title="Business Security" href="/solutions/business">
-                                            Advanced protection for your commercial property.
+                                            Advanced protection for commercial properties.
+                                        </ListItem>
+                                        <ListItem title="Enterprise Solutions" href="/solutions/enterprise">
+                                            Scalable security for large organizations.
                                         </ListItem>
                                         <ListItem title="Smart Automation" href="/solutions/automation">
-                                            Control lights, locks, and thermostats remotely.
-                                        </ListItem>
-                                        <ListItem title="Video Monitoring" href="/solutions/video">
-                                            HD cameras with cloud storage and AI detection.
+                                            Integrated home and office automation.
                                         </ListItem>
                                     </ul>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Developers</NavigationMenuTrigger>
-                                <NavigationMenuContent>
-                                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                                        <ListItem title="API Documentation" href="/developers/api">
-                                            Integrate KingAlarm with your own systems.
-                                        </ListItem>
-                                        <ListItem title="SDKs" href="/developers/sdks">
-                                            Libraries for Python, Node.js, and more.
-                                        </ListItem>
-                                    </ul>
-                                </NavigationMenuContent>
+                                <Link href="/contact" legacyBehavior passHref>
+                                    <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                                        Contact US
+                                    </NavigationMenuLink>
+                                </Link>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                                         <ListItem title="Blog" href="/resources/blog">
-                                            Latest news and security tips.
+                                            Latest news and security insights.
                                         </ListItem>
-                                        <ListItem title="Support" href="/resources/support">
+                                        <ListItem title="Support Center" href="/resources/support">
                                             Get help with your system.
+                                        </ListItem>
+                                        <ListItem title="Documentation" href="/resources/docs">
+                                            User guides and manuals.
+                                        </ListItem>
+                                        <ListItem title="Case Studies" href="/resources/cases">
+                                            Success stories from our clients.
                                         </ListItem>
                                     </ul>
                                 </NavigationMenuContent>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <Link href="#faq" legacyBehavior passHref>
+                                    <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                                        FAQs
+                                    </NavigationMenuLink>
+                                </Link>
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
@@ -134,10 +138,12 @@ export default function Navbar() {
                         </SheetTrigger>
                         <SheetContent side="right">
                             <div className="flex flex-col gap-4 mt-8">
-                                <Link href="#" className="text-lg font-medium">Platform</Link>
-                                <Link href="#" className="text-lg font-medium">Solutions</Link>
-                                <Link href="#" className="text-lg font-medium">Developers</Link>
-                                <Link href="#" className="text-lg font-medium">Resources</Link>
+                                <Link href="/about" className="text-lg font-medium">About us</Link>
+                                <Link href="/products" className="text-lg font-medium">Products</Link>
+                                <Link href="/solutions" className="text-lg font-medium">Solutions</Link>
+                                <Link href="/contact" className="text-lg font-medium">Contact US</Link>
+                                <Link href="/resources" className="text-lg font-medium">Resources</Link>
+                                <Link href="#faq" className="text-lg font-medium">FAQs</Link>
                                 <div className="flex items-center gap-2 mt-4">
                                     <Search className="h-5 w-5" />
                                     <span className="text-lg">Search</span>

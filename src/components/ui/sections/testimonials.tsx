@@ -1,14 +1,54 @@
 "use client";
 
-import { Star, Box, Hexagon } from "lucide-react";
+import { Star } from "lucide-react";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Testimonials() {
+    const sectionRef = useRef<HTMLElement>(null);
+    const headerRef = useRef<HTMLDivElement>(null);
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        if (!sectionRef.current || !headerRef.current || !cardRef.current) return;
+
+        // Animate header
+        gsap.from(headerRef.current.children, {
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: sectionRef.current,
+                start: "top 70%",
+            }
+        });
+
+        // Animate card
+        gsap.from(cardRef.current, {
+            x: -50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: cardRef.current,
+                start: "top 70%",
+            }
+        });
+
+    }, { scope: sectionRef });
+
     return (
-        <section className="bg-black py-24 text-white">
+        <section ref={sectionRef} className="bg-black py-24 text-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="mb-16 text-center">
+                <div ref={headerRef} className="mb-16 text-center">
                     <h2 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
                         Trusted voices
                     </h2>
@@ -18,7 +58,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Main Card */}
-                <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                <div ref={cardRef} className="mx-auto max-w-5xl overflow-hidden bg-white/5">
                     <div className="grid gap-8 md:grid-cols-2">
                         {/* Image Placeholder */}
                         <div className="relative min-h-[300px] w-full bg-white/10 md:h-full">
@@ -68,26 +108,86 @@ export default function Testimonials() {
                         </div>
                     </div>
 
-                    {/* Partner Logos Footer */}
-                    <div className="grid grid-cols-2 border-t border-white/10 md:grid-cols-4">
-                        <div className="flex items-center justify-center border-r border-white/10 py-6">
-                            <div className="flex items-center gap-2 text-lg font-bold">
-                                <Box className="h-6 w-6" /> Webflow
+                    {/* Partner Logos Carousel */}
+                    <div className="relative overflow-hidden border-b border-white/10 bg-white dark:bg-black">
+                        <div className="flex animate-scroll hover:pause-animation">
+                            {/* First set of logos */}
+                            <div className="flex shrink-0">
+                                <div className="flex items-center justify-center px-12 py-6">
+                                    <Image
+                                        src="/partner-logos/canada-logo.svg"
+                                        alt="Canada Life"
+                                        width={120}
+                                        height={40}
+                                        className="h-10 w-auto"
+                                    />
+                                </div>
+                                <div className="flex items-center justify-center px-12 py-6">
+                                    <Image
+                                        src="/partner-logos/NCB-logo.svg"
+                                        alt="NCB"
+                                        width={120}
+                                        height={40}
+                                        className="h-10 w-auto"
+                                    />
+                                </div>
+                                <div className="flex items-center justify-center px-12 py-6">
+                                    <Image
+                                        src="/partner-logos/canada-logo.svg"
+                                        alt="Canada Life"
+                                        width={120}
+                                        height={40}
+                                        className="h-10 w-auto"
+                                    />
+                                </div>
+                                <div className="flex items-center justify-center px-12 py-6">
+                                    <Image
+                                        src="/partner-logos/NCB-logo.svg"
+                                        alt="NCB"
+                                        width={120}
+                                        height={40}
+                                        className="h-10 w-auto"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex items-center justify-center border-r border-white/10 py-6">
-                            <div className="flex items-center gap-2 text-lg font-bold">
-                                <Hexagon className="h-6 w-6" /> Relume
-                            </div>
-                        </div>
-                        <div className="flex items-center justify-center border-r border-white/10 py-6">
-                            <div className="flex items-center gap-2 text-lg font-bold">
-                                <Box className="h-6 w-6" /> Webflow
-                            </div>
-                        </div>
-                        <div className="flex items-center justify-center py-6">
-                            <div className="flex items-center gap-2 text-lg font-bold">
-                                <Hexagon className="h-6 w-6" /> Relume
+                            {/* Duplicate set for seamless loop */}
+                            <div className="flex shrink-0">
+                                <div className="flex items-center justify-center px-12 py-6">
+                                    <Image
+                                        src="/partner-logos/canada-logo.svg"
+                                        alt="Canada Life"
+                                        width={120}
+                                        height={40}
+                                        className="h-10 w-auto"
+                                    />
+                                </div>
+                                <div className="flex items-center justify-center px-12 py-6">
+                                    <Image
+                                        src="/partner-logos/NCB-logo.svg"
+                                        alt="NCB"
+                                        width={120}
+                                        height={40}
+                                        className="h-10 w-auto"
+                                    />
+                                </div>
+                                <div className="flex items-center justify-center px-12 py-6">
+                                    <Image
+                                        src="/partner-logos/canada-logo.svg"
+                                        alt="Canada Life"
+                                        width={120}
+                                        height={40}
+                                        className="h-10 w-auto"
+                                    />
+                                </div>
+                                <div className="flex items-center justify-center px-12 py-6">
+                                    <Image
+                                        src="/partner-logos/NCB-logo.svg"
+                                        alt="NCB"
+                                        width={120}
+                                        height={40}
+                                        className="h-10 w-auto"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
