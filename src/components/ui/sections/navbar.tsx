@@ -20,7 +20,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 export default function Navbar() {
     return (
         <nav className="w-full border-b bg-white dark:bg-black">
-            <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto flex h-20 max-w-7xl items-center justify-between pl-4 sm:pl-6 lg:pl-8 pr-0">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 mr-8">
                     <Image
@@ -116,11 +116,11 @@ export default function Navbar() {
                 </div>
 
                 {/* Right Side Actions */}
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-6 self-stretch">
                     <button className="text-muted-foreground hover:text-foreground hidden sm:block">
                         <Search className="h-5 w-5" />
                     </button>
-                    <Button className="hidden sm:flex">
+                    <Button className="hidden sm:flex h-full rounded-none px-8">
                         Start building
                     </Button>
 
