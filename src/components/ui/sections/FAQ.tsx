@@ -87,7 +87,7 @@ export default function FAQ() {
                                 value={`item-${index}`}
                                 className="border-white/10"
                             >
-                                <AccordionTrigger className="text-lg font-bold hover:no-underline hover:text-gray-300">
+                                <AccordionTrigger className="text-lg font-bold hover:no-underline hover:text-primary">
                                     {faq.question}
                                 </AccordionTrigger>
                                 <AccordionContent className="text-gray-400 text-base leading-relaxed">
@@ -105,7 +105,7 @@ export default function FAQ() {
                                 value={`item-${index + midPoint}`}
                                 className="border-white/10"
                             >
-                                <AccordionTrigger className="text-lg font-bold hover:no-underline hover:text-gray-300">
+                                <AccordionTrigger className="text-lg font-bold hover:no-underline hover:text-primary">
                                     {faq.question}
                                 </AccordionTrigger>
                                 <AccordionContent className="text-gray-400 text-base leading-relaxed">
