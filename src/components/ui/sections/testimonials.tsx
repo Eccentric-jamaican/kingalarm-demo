@@ -63,7 +63,7 @@ export default function Testimonials() {
                         {/* Testimonial Image */}
                         <div className="relative min-h-[300px] w-full bg-white/10 md:h-full">
                             <Image
-                                src="/testimonial-michael.png"
+                                src="/testimonial-section/testimonial-michael.png"
                                 alt="Michael Roberts, Security Director"
                                 fill
                                 className="object-cover"

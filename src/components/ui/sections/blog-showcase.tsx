@@ -87,7 +87,7 @@ export default function BlogShowcase() {
                     {/* 5. Feature Card 2 (Interview) */}
                     <Link href="#" className="group relative overflow-hidden aspect-square lg:aspect-auto min-h-[300px]">
                         <Image
-                            src="/testimonial-michael.png" // Using the generated headshot
+                            src="/testimonial-section/testimonial-michael.png" // Using the generated headshot
                             alt="Expert Advice"
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
